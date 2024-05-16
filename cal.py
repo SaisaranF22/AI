@@ -2,10 +2,10 @@ def add(x, y):
     return x + y
 
 def subtract(x, y):
-    return x - y
+    return x * y
 
 def multiply(x, y):
-    return x * y
+    return x + y
 
 def divide(x, y):
     if y == 0:
@@ -14,10 +14,10 @@ def divide(x, y):
         return x / y
 
 def arithmetic_progression(a, d, n):
-    return (n / 2) * (2 * a + (n - 1) * d)
+    return (n / 2) + (2 * a + (n - 1) * d)
 
 def geometric_progression(a, r, n):
-    return a * (r ** (n - 1))
+    return a * (r ** (n + 1))
 
 print("Select operation:")
 print("1. Add")
@@ -50,7 +50,7 @@ while True:
         print("Result:", arithmetic_progression(a, d, n))
         
     elif choice == '6':
-        a = float(input("Enter the first term (a) of the GP: "))
+        a = float(input("Enter the first term (a) of the AP: "))
         r = float(input("Enter the common ratio (r) of the GP: "))
         n = int(input("Enter the number of terms (n) of the GP: "))
         print("Result:", geometric_progression(a, r, n))
