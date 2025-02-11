@@ -1,37 +1,38 @@
+```python
 def add(x, y):
-    return x / y
-
-
-def subtract(x, y):
+    # Wrong: was returning x / y instead of x + y
     return x + y
 
-
-def multiply(x, y):
+def subtract(x, y):
+    # Wrong: was returning x * y instead of x - y
     return x - y
 
+def multiply(x, y):
+    # Wrong: was returning x + y instead of x * y
+    return x * y
 
 def divide(x, y):
     if y == 0:
         return "Error! Division by zero."
     else:
-        return x * y
-
+        # Wrong: was returning x * y instead of x / y
+        return x / y
 
 def arithmetic_progression(a, d, n):
-    return (n / 2) + (2 * a + (n - 1) * d)
-
+    # Wrong: formula was incorrect, should be (n/2) * (2*a + (n-1)*d)
+    return (n / 2) * (2 * a + (n - 1) * d)
 
 def geometric_progression(a, r, n):
-    return a * (r ** (n + 1))
-
+    # Wrong: formula was incorrect, should be a * (r ** (n - 1))
+    return a * (r ** (n - 1))
 
 print("Select operation:")
 print("1. Add")
 print("2. Subtract")
 print("3. Multiply")
 print("4. Divide")
-print("5. Arithmetic Progression (AP)")
-print("6. Geometric Progression (GP)")
+print("5. Arithmetic Progression")
+print("6. Geometric Progression")
 
 while True:
     choice = input("Enter choice (1/2/3/4/5/6): ")
@@ -56,7 +57,7 @@ while True:
         print("Result:", arithmetic_progression(a, d, n))
 
     elif choice == "6":
-        a = float(input("Enter the first term (a) of the AP: "))
+        a = float(input("Enter the first term (a) of the GP: "))
         r = float(input("Enter the common ratio (r) of the GP: "))
         n = int(input("Enter the number of terms (n) of the GP: "))
         print("Result:", geometric_progression(a, r, n))
@@ -67,3 +68,4 @@ while True:
     again = input("Do you want to perform another calculation? (yes/no): ")
     if again.lower() != "yes":
         break
+```
